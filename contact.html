@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Siffthatics 🫶</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        background-color: #fef7e8;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .contact-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        margin: 2rem 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .info-card {
+        background: linear-gradient(135deg, #fff5e6, #ffe6d5);
+        border-radius: 15px;
+        padding: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        transition: transform 0.3s;
+    }
+    .info-card:hover {
+        transform: translateY(-5px);
+    }
+    .btn-contact {
+        background-color: #d2691e;
+        color: white;
+        padding: 12px;
+        border-radius: 25px;
+        border: none;
+        width: 100%;
+        font-weight: bold;
+        margin-top: 10px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+    .btn-contact:hover {
+        background-color: #b55a1a;
+        color: white;
+    }
+    .btn-whatsapp {
+        background-color: #25D366;
+    }
+    .btn-whatsapp:hover {
+        background-color: #1da851;
+    }
+    footer {
+        background-color: #2c2c2c;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    .form-control {
+        border-radius: 10px;
+        padding: 12px;
+    }
+    .success {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 1rem;
+        display: none;
+    }
+    .error {
+        color: #dc3545;
+        font-size: 0.85rem;
+        margin-top: 5px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark p-3">
+    <div class="container">
+        <a class="navbar-brand text-white fw-bold fs-3" href="index.html">🍞 Siffthatics 🫶</a>
+        <div>
+            <a href="index.html" class="text-white me-3 text-decoration-none">Home</a>
+            <a href="about.html" class="text-white me-3 text-decoration-none">About</a>
+            <a href="contact.html" class="text-white text-decoration-none">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            
+            <!-- Contact Info Cards -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div style="font-size: 2rem;">📧</div>
+                        <h4 style="color: #d2691e;">Email Us</h4>
+                        <p>hello@siffthatics.com</p>
+                        <a href="mailto:hello@siffthatics.com" class="btn-contact">Send Email →</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div style="font-size: 2rem;">📞</div>
+                        <h4 style="color: #d2691e;">Call Us</h4>
+                        <p>+92 300 6290056</p>
+                        <a href="tel:+92301 6477640" class="btn-contact">Call Now →</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div style="font-size: 2rem;">💬</div>
+                        <h4 style="color: #d2691e;">WhatsApp</h4>
+                        <p>+92 301 6477640</p>
+                        <a href="https://wa.me/923001234567?text=Hi%20Siffthatics%20%F0%9F%8D%9E" class="btn-contact btn-whatsapp">Chat on WhatsApp →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form (Opens Email App) -->
+            <div class="contact-card">
+                <h2 class="text-center" style="color: #d2691e;">Send a Message 💌</h2>
+                <p class="text-center">Fill the form and it will open your email app</p>
+                
+                <form action="mailto:hello@siffthatics.com" method="post" enctype="text/plain" id="contactForm">
+                    <div class="mb-3">
+                        <input type="text" name="Name" id="name" class="form-control" placeholder="Your Name *" required>
+                        <div class="error" id="nameError">Please enter your name</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <input type="email" name="Email" id="email" class="form-control" placeholder="Your Email *" required>
+                        <div class="error" id="emailError">Please enter a valid email</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <select name="Subject" id="subject" class="form-control" required>
+                            <option value="">Select Subject *</option>
+                            <option value="Recipe Question">Recipe Question</option>
+                            <option value="Order Inquiry">Order Inquiry</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Collaboration">Collaboration</option>
+                        </select>
+                        <div class="error" id="subjectError">Please select a subject</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <textarea name="Message" id="message" class="form-control" rows="4" placeholder="Your Message *" required></textarea>
+                        <div class="error" id="messageError">Please enter your message</div>
+                    </div>
+                    
+                    <button type="submit" class="btn-contact">Send Message 📧</button>
+                    <div class="success" id="successMsg">
+                        ✅ Opening your email app... Send the email and we'll reply soon!
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Office Address -->
+            <div class="contact-card text-center">
+                <h3 style="color: #d2691e;">📍 Visit Us</h3>
+                <p> Baking Street, Wazirabad, Pakistan</p>
+                <p>⏰FRIDAY - SUNDAY: 9:00 AM - 6:00 PM</p>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Siffthatics 🫶 | Baking happiness, one treat at a time!</p>
+    <p class="small">📧 hello@siffthatics.com | 📞 +92 301 6477640</p>
+</footer>
+
+<script>
+    // Form Validation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        let isValid = true;
+        
+        // Hide all errors
+        document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+        document.getElementById('successMsg').style.display = 'none';
+        
+        // Validate Name
+        let name = document.getElementById('name').value.trim();
+        if (name === '') {
+            document.getElementById('nameError').style.display = 'block';
+            isValid = false;
+        }
+        
+        // Validate Email
+        let email = document.getElementById('email').value.trim();
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '' || !emailPattern.test(email)) {
+            document.getElementById('emailError').style.display = 'block';
+            isValid = false;
+        }
+        
+        // Validate Subject
+        let subject = document.getElementById('subject').value;
+        if (subject === '') {
+            document.getElementById('subjectError').style.display = 'block';
+            isValid = false;
+        }
+        
+        // Validate Message
+        let message = document.getElementById('message').value.trim();
+        if (message === '') {
+            document.getElementById('messageError').style.display = 'block';
+            isValid = false;
+        }
+        
+        // If valid, show success message
+        if (isValid) {
+            document.getElementById('successMsg').style.display = 'block';
+        } else {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>
